@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Event Creation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <style>
+    *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  background-image: url("https://images.pexels.com/photos/61135/pexels-photo-61135.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+form {
+  margin-left: 700px;
+  margin-bottom: 20px;
+  /* display:flex; */
+  /* justify-items: end; */
+  max-width: 300px;
+  /* margin: 10px auto; */
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 12px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 15px;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #780f98;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #780f98;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  cursor:pointer;
+}
+
+fieldset {
+  margin-bottom: 15px;
+  border: none;
+}
+
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+  </style>
+<!-- <link rel="stylesheet" href="{% static '/css/evecr.css' %}"> -->
+
+</head>
+
+    <body>
+      {% include 'tourneys/nab_bar.html' %}
+      <form method="post">
+       {% csrf_token %}
+        <br><br>
+      
+        <h1>Event Creation</h1>
+        
+        <fieldset>
+          <label for="name">Event Name:</label>
+          <input type="text" id="name" name="event_name">
+        </fieldset>
+
+        <fieldset>
+          <label for="sport">Sport:</label>
+          <select id="sport" name="sport">
+            <option value="FootBall">FootBall</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <label for="noteams">No. of Teams:</label>
+          <input type="number" id="noteams" name="noteams" min="4">
+        </fieldset>
+
+        <fieldset>
+          <label for="name">Event Info:</label>
+          <textarea id="event_info" name="event_info"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <label for="name">Event Date:</label>
+          <input type="date" id="date" name="event_date">
+        </fieldset>
+
+        <fieldset>
+          <label for="venue">Event Venue:</label>
+          <input type="text" id="venue" name="venue">
+        </fieldset>
+
+        <fieldset>
+          <label for="event_mode">Event Mode:</label>
+          <select id="event_mode" name="event_mode">
+            <option value="knock-out">Knock-Out</option>
+            <option value="robin">Round-Robin</option>
+          </select>
+        </fieldset>
+
+       
+        <button style="border-radius:12px ;width: 220px;display:flex;margin-top: 20px;margin-left:100px;margin-bottom:20px;text-align: center;justify-content: center;" type="submit">Create Event</button>
+      </form>
+      
+    </body>
+</html>
+
+

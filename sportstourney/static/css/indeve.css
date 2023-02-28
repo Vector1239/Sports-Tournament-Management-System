@@ -1,0 +1,23 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+.heading{
+  padding: 30px;
+  width: 50%;
+}
+/* Split the screen in half */
+ .image {
+ text-align: center;
+ height: 100%;
+ background-color:#808080;
+
+  } 
+  
+.content{
+  width: 100px;
+padding-left: 500px;
+padding-top: 50px;
+padding-bottom: 50px;
+}

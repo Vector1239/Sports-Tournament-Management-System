@@ -1,0 +1,25 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.header-background{
+    background-color:#26292D;
+    height: 480px;
+    width: auto;
+}
+.header-text{
+   
+    size: 35px;
+    text-align: center;
+    padding-top: 35px;
+}
+
+
+.row{
+    margin-left: 10px;
+}
+
+
+.col-3 bg-white{
+    margin-left: 10px;
+}

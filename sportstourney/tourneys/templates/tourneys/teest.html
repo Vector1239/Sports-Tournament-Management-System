@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static '/css/allin.css' %}">
+</head>
+<body>
+	{% for i in n %}
+		{% if i == 0 %}
+			{% for i in tems %}
+				{% if i.tem_by %}
+					<div class="unit">
+						<div class="rect">BYE {{i.tem_name}}</div>
+						<div class="sqr">5</div>
+					</div>
+					<br>
+				{% else %}
+					<div class="unit">
+						<div class="rect">{{i.tem_name}}</div>
+						<div class="sqr">5</div>
+					</div>
+					<br>
+				{% endif %}				
+				<!-- {% if i.tem_pos|divisibleby:2 %}<br>{% endif %} -->
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+</body>
+</html>

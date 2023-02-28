@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+<!-- 	<script type="text/javascript">
+		jQuery.noConflict()(function ($) {
+		$(document).ready(function(){
+			$('.options').click(function(){
+				var txt="";
+				$('.options:checked').each(function(){
+					 txt+=$(this).val()+" "				
+				});						
+				$('#textvalues').val(txt);
+			});
+		});
+	});
+	</script> -->
+</head>
+<body style="text-align: center;">
+  <form method="POST">
+	{% csrf_token %}
+	<label style="font-size:20px;">Enter number of teams:</label>
+  	<input type="text" id="noT" name="number">
+  	<input type="submit" value="Submit" >
+  </form>
+</body>
+</html>

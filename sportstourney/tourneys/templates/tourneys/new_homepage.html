@@ -1,0 +1,611 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static '/css/new_home.css' %}"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+    <!-- <link href="//db.onlinewebfonts.com/c/f4c9951744c0ef14010218fc1b2f7938?family=Larsseit" rel="stylesheet" type="text/css"/> -->
+    <!-- @import url(//db.onlinewebfonts.com/c/f4c9951744c0ef14010218fc1b2f7938?family=Larsseit); -->
+    <title>Home_Page_new</title>
+    <style>
+      /* @import url(//db.onlinewebfonts.com/c/f4c9951744c0ef14010218fc1b2f7938?family=Larsseit); */
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.homepage-hero__heading .heading {
+    font-size: 80px;
+}
+
+
+.s1{
+    background-color: white;
+    /* height: 30px;
+    width:1200px; */
+    /* border: 1px solid black; */
+    overflow: auto;
+}
+.s2{
+    background-color: rgb(220, 217, 217);
+}
+
+.header{
+    /* height: 1000px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'nav-wrapper nav-wrapper'
+    'left-column right-column'
+     ;
+}
+.left-column{
+    height: 700px;
+    /* border: 1px solid black; */
+}
+.right-column{
+    height: 700px;
+    /* border: 1px solid black; */
+}
+.fevent{
+    height: 390px;
+	margin-left:60px;
+	margin-right:60px;
+    /* border: 1px solid black; */
+}
+.cevent{
+    height: 390px;
+	/* border: 1px solid black; */
+	margin-left:60px;
+	margin-right:60px;
+}
+.oevent{
+    height: 390px;
+    /* border: 1px solid black; */
+	margin-left:60px;
+	margin-right:60px;
+}
+.testimonial{
+  height: 350px;
+background-image:url('https://image.slidesdocs.com/responsive-images/background/green-flat-style-environmental-agency-simple-powerpoint-background_1f596db9e5__960_540.jpg');
+background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /*border: 1px solid black; */
+}
+.testimonial h1{
+margin-left:80px;
+font-size: 3rem;
+padding-top:40px;
+  line-height: 2.25rem;
+font-weight: 700;
+z-index:10;
+position:relative;
+font-family: "Playfair Display", serif;
+line-height: 1.375;
+}
+.testimonial p{
+  display: block;
+margin-left:80px;
+padding-left:80px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+margin-top:1rem;
+margin-bottom:1.75rem;
+max-width: 28rem;
+--tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.readbtn{
+	font-weight:700;
+	--tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity));
+	padding-left: 2.5rem;
+    padding-right: 2.5rem;
+	padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+	margin-left:80px;
+	--tw-bg-opacity: 1;
+    background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+	border-radius: 9999px;
+	display: inline-block;
+	text-decoration:inherit;
+}
+.readbtn:hover{
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.footer{
+    height: 300px;
+    border: 1px solid black;
+}
+.slider {
+    width: 500px;
+    height: 500px;
+    background-color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  .image-container {
+    width: 1500px;
+    background-color: rgb(250, 248, 248);
+    height: 500px;
+    clear: both;
+    position: relative;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+    transition: left 2s;
+  }
+  .slide {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+  #slide-1:target ~ .image-container {
+    left: 0px;
+  }
+  #slide-2:target ~ .image-container {
+    left: -500px;
+  }
+  #slide-3:target ~ .image-container {
+    left: -1000px;
+  }
+  .buttons {
+    position: relative;
+    top: -20px;
+  }
+  .buttons a {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background-color: lightgreen;
+  }
+  .box1{
+    margin-left: 70px;
+    text-align: center;
+    width: 490px;
+    height: 100px;
+    font-family: 'Source Serif Pro', serif;
+    background-color:rgb(247, 222, 247);
+    border: 1px solid rgb(87, 82, 82);
+    border: none;
+    border-radius: 3px;
+    /* border-radius: ; */
+    /* -webkit-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75); */
+  }
+  .homepage-hero__heading {
+    order: 1;
+    width: 100%;
+}
+.heading {
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 1.6rem;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+    color: rgb(131, 70, 146);;
+}
+/*headings above cards*/
+.evhead{
+	font-size:25px;
+    font-family: 'Source Serif Pro', serif;
+	margin-left:10px;
+}
+.viewall{
+	font-size:20px;
+    font-family: 'Source Serif Pro', serif;
+	text-align:right;
+	margin-right:15px;
+	margin-top:10px;
+	margin-bottom:6px;
+}
+/*cards*/
+.card-container {
+  position: relative;
+  /* height: 380px; */
+  /*top: 50%;
+  transform: translateY(-50%);*/
+  display:flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: calc(20% - 20px);
+  height: 280px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap");
+
+.name,
+h1 {
+  font-family: "Playfair Display", serif;
+}
+
+svg {
+  fill: #ea5858;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: auto;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: #111;
+}
+
+.footer-content h3 {
+	margin-top: 50px;
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+  color: #fff;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  width: 20px;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+}
+
+.footer-bottom p a {
+  color: #ccc;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+}
+
+.footer-menu {
+  float: right;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+
+@media (max-width: 500px) {
+  .footer-bottom p {
+    float: none;
+  }
+
+  .footer-menu ul {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+    </style>
+    <section class="s1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="{% url 'lan' %}"> <img src="https://i.imgur.com/spijFb3.jpg" height="50px"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link"  href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'contact_us' %}">Contact Us <span class="sr-only">(current)</span></a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+        </div>
+    </section>
+    <section class="s1">
+        <div class="header">
+            <div class="left-column">
+                <div class="slider">
+                    <span id="slide-1"></span>
+                    <span id="slide-2"></span>
+                    <span id="slide-3"></span>
+                    <div class="image-container">
+                      <img src="https://i.imgur.com/MbdfXgZ.png" class="slide" width="500" height="500" />
+                      <img src="https://elearningindustry.com/wp-content/uploads/2019/11/5-Biggest-Challenges-Of-Using-The-70-20-10-Model-In-Your-Workforce-Training.jpeg" class="slide" width="500" height="500" />
+                      <img src="https://www.samuelmerritt.edu/sites/default/files/styles/width_960/public/2022-07/new_beginning.jpg?itok=inAR9Js0" class="slide" width="500" height="500" />
+                    </div>
+                    <!-- <div class="buttons">
+                      <a href="#slide-1"></a>
+                      <a href="#slide-2"></a>
+                      <a href="#slide-3"></a>
+                    </div> -->
+                  </div>
+                  <br>
+                <!-- <div class="box1">
+                <div class="text1"><h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt!</h4></div>
+                </div> -->
+            </div>
+            <div class="right-column">
+                <div class="homepage-hero__heading">
+                    <h1 class="heading">
+                        Create and view tournament
+                    </h1>
+                </div>
+               
+             <p>No matter what your business needs, we can connect you with a creative expert to make your business look and feel professional. Because good design makes great business.</p>
+             
+             <div><a href="{% url 'contact_us' %}"><button type="button" class="btn btn-primary">Contact US</button></a></div>
+             <br><br>
+             <!-- <button type="button" class="btn btn-dark"> Organize an Event</button> -->
+             <a href="{% url 'login_register' 0 %}"><button type="button" class="btn btn-dark">Organize an event</button></a>
+            <button type="button" class="btn btn-dark">Find Event</button>
+            <br>
+            <br>
+            <br>
+            
+            </div>
+            
+        </div>
+    </section>
+    <section class="s2">
+      <div class="fevent">
+        <div class="evhead">
+          <text>Featured Events</text>
+        </div>
+        <div class="viewall">
+          <text>View all &#8594</text>
+        </div>
+            
+            <div class="card-container">
+              {% for i in fulle %}
+              <div class="card">
+                <img src="https://i.pinimg.com/originals/04/cb/fc/04cbfcbbe02db4654d7758d240205798.jpg" alt="Image 1">
+                <div class="card-title">{{i.eve_nam}}</div>
+                <div class="card-content">{{i.eve_venue}}</div>
+                <a href="{% url 'login_register'  i.eve_id %}"><button>Register</button></a>
+              </div> 
+              {% endfor %}   
+            </div>
+            
+      </div>
+    </section>
+    <section class="s1">
+        <div class="oevent">
+		<div class="evhead">
+			<text>Featured Tournaments</text>
+		</div>
+		<div class="viewall">
+			<text>View all &#8594</text>
+		</div>
+    <div class="card-container">
+      {% for i in te %}
+      <div class="card">
+        <img src="https://i.pinimg.com/originals/04/cb/fc/04cbfcbbe02db4654d7758d240205798.jpg" alt="Image 1">
+        <div class="card-title">{{i.tourney_nam}}</div>
+        <div class="card-content">{{i.tourney_org}}</div>
+      </div> 
+      {% endfor %}   
+    </div>
+          <!-- <div class="card">
+            <img src="https://wallpapers.com/images/hd/cute-blue-aesthetic-table-tennis-equipment-0j9tg4f1zoywexgp.jpg" alt="Image 2">
+            <div class="card-title">Card 2</div>
+            <div class="card-content">Content 2</div>
+          </div>
+          <div class="card">
+            <img src="https://data.whicdn.com/images/294487209/original.png" alt="Image 3">
+            <div class="card-title">Card 3</div>
+            <div class="card-content">Content 3</div>
+          </div>
+          <div class="card">
+            <img src="https://i.pinimg.com/originals/83/2b/a4/832ba4a4a7a1a46e17aa515fd2d1ca54.jpg" alt="Image 4">
+            <div class="card-title">Card 4</div>
+            <div class="card-content">Content 4</div>
+          </div>
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Qzp6INKEQfL36I5ir2juIKHMBldycfV0m7lEhDfAWkVVV3cL84frS3McCFKfzqlVXEg&usqp=CAU" alt="Image 5">
+            <div class="card-title">Card 5</div>
+            <div class="card-content">Content 5</div>
+          </div> -->
+        </div>
+		</div>
+    </section>
+    <section class="s2">
+        <div class="cevent">
+		<div class="evhead">
+			<text>Completed Events</text>
+		</div>
+		<div class="viewall">
+			<text>View all &#8594</text>
+		</div>
+        <div class="card-container">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkXrSwVTZJNx0_J26bRKtRx480OFm2nDzIUQ&usqp=CAU" alt="Image 1">
+            <div class="card-title">Card 1</div>
+            <div class="card-content">Content 1</div>
+          </div>
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT36DCTTauGaQHFtCzFjziNArr6JcxPKg014A&usqp=CAU" alt="Image 2">
+            <div class="card-title">Card 2</div>
+            <div class="card-content">Content 2</div>
+          </div>
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfDTyRvs7vwzVMVgduRVvD_kt0mq3WG1HGqVQBkiOi_-phXR-GBnmNB-rzXqbLNSMtGM&usqp=CAU" alt="Image 3">
+            <div class="card-title">Card 3</div>
+            <div class="card-content">Content 3</div>
+          </div>
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPBesZYZCS02IEHqrC4sDWUe6fcmySSxtpQ&usqp=CAU" alt="Image 4">
+            <div class="card-title">Card 4</div>
+            <div class="card-content">Content 4</div>
+          </div>
+          <div class="card">
+            <img src="https://r1.ilikewallpaper.net/iphone-wallpapers/download/30741/Basketball-Green-City-Sports-Art-NBA-iphone-wallpaper-ilikewallpaper_com.jpg" alt="Image 5">
+            <div class="card-title">Card 5</div>
+            <div class="card-content">Content 5</div>
+          </div>
+        </div>
+		</div>
+    </section>
+    <section class="s1">
+      <div class="testimonial">
+        <h1>Bringing value <br />across different brands.</h1>
+        <p>Over 7 brands in all sizes use Rame Gujarat to understand their business and customers better.</p>
+        <a href="#" class="readbtn">Read success stories</a>
+  </div>
+  </section>
+    
+    <div class="footer">
+		<div class="footer-content">
+			<h3>Rame Gujarat</h3>
+			<p>Rame Gujarat Sports Management System. Thank you for choosing us as your trusted partner in sports management.</p>
+			<ul class="socials">
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+			</ul>
+		</div>
+		<div class="footer-bottom">
+			<div class="footer-menu">
+				<ul class="f-menu">
+					<li><a href="">Home</a></li>
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="">Blog</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+

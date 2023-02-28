@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Tournament Creation</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+  <!-- <link rel="stylesheet" href="{% static '/css/tourcre_style.css' %}"> -->
+  <style>
+
+    *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  /* display: flex; */
+  /* justify-content: end; */
+  font-family: 'Nunito', sans-serif;
+  /*color: #384047;*/
+
+
+  background-image: url("https://images.pexels.com/photos/61135/pexels-photo-61135.jpeg");
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  background-size: 100%;
+}
+
+form {
+  margin-left: 700px;
+  margin-bottom: 20px;
+  /* display:flex; */
+  /* justify-items: end; */
+  max-width: 300px;
+  /* margin: 10px auto; */
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 12px;
+}
+
+.big_h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 15px;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #780f98;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #780f98;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  cursor:pointer;
+}
+
+fieldset {
+  margin-bottom: 15px;
+  border: none;
+}
+
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+  </style>
+</head>
+<body>
+  {% include 'tourneys/nab_bar.html' %}
+      <form method="post">
+       {% csrf_token %}
+        <br><br>
+      
+        <h1>Tournament Creation</h1>
+        <br>
+
+        <fieldset>
+          <label for="tor_name">Tournament Name:</label>
+          <input type="text" id="tor_name" name="tor_name">
+        </fieldset>
+
+        <fieldset>
+          <label for="org_name">Organizer Name:</label>
+          <input type="text" id="org_name" name="org_name">
+        </fieldset>
+
+        <fieldset>
+          <label for="start_date">Tournament Start Date:</label>
+          <input type="date" id="date" name="start_date">
+        </fieldset>
+
+        <fieldset>
+          <label for="end_date">Tournament End Date:</label>
+          <input type="date" id="end_date" name="end_date">
+        </fieldset>
+
+       
+        <button style="border-radius:12px ;width: 220px;display:flex;margin-top: 20px;margin-left:95px;margin-bottom:20px;text-align: center;justify-content: center;" type="submit">Create Tournament</button>
+      </form>
+      
+    </body>
+</html>

@@ -1,0 +1,58 @@
+
+.b1{
+  padding: 20px;
+  color: #FFF;
+  background-color: #780f98;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 40%;
+  border: 1px solid #780f98;
+  border-width: 1px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  cursor:pointer;
+  float:left;
+  transition: 0.3s;
+
+}
+
+.b2{
+  padding: 20px;
+  color: #FFF;
+  background-color: #780f98;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 40%;
+  border: 1px solid #780f98;
+  border-width: 1px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  cursor:pointer;
+  float:right;
+  transition: 0.3s;
+
+}
+
+a{
+  transition: 0.3s;
+
+}
+a:hover{
+  background-color: #3e8e41;
+  color: #3e8e41;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

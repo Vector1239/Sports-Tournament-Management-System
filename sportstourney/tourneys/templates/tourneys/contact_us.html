@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <!-- <link rel="stylesheet" type="text/css" href="contactus.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="aboutus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    border-bottom: 1.5px solid black;
+	display: inline-block;
+    margin-left:40%;
+  }
+  
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  form {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+button {
+    border-radius: 20px;
+    border: 1px solid #CDFCF6;
+    background: #7F669D;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+}
+
+input{
+    font-family: monospace;
+}
+
+textarea{
+    padding: 1.5%;
+}
+
+.div1{
+    font-family: monospace;
+    padding-left: 13%;
+}
+
+body .sec2map {
+height: 250px !important;
+width: 400px !important;
+}
+
+.div2{
+    font-family: monospace;
+    float: right;
+    padding-right: 25%;    
+}
+.header{
+  /* height: 1000px; */
+  display: grid;
+  padding-top: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  'nav-wrapper nav-wrapper'
+  'left-column right-column'
+   ;
+}
+.left-column{
+  height: 800px;
+  /* border: 1px solid black; */
+}
+.right-column{
+  height: 800px;
+  /* border: 1px solid black; */
+}
+.formbold-mb-5 {
+  margin-bottom: 20px;
+}
+.formbold-pt-3 {
+  padding-top: 12px;
+}
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  background: white;
+}
+.formbold-form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #07074d;
+  margin-bottom: 12px;
+}
+.formbold-form-label-2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6b7280;
+  outline: none;
+  resize: none;
+}
+.formbold-form-input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-btn {
+  text-align: center;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 14px 32px;
+  border: none;
+  font-weight: 600;
+  background-color: #6a64f1;
+  color: white;
+  cursor: pointer;
+}
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold--mx-3 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.formbold-px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}
+@media (min-width: 540px) {
+  .sm\:w-half {
+    width: 50%;
+  }
+}
+.bg{
+  background-color: rgb(48, 44, 44);
+  height: 300px;
+  width: 500px;
+  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.s1{
+    background-color: white;
+    /* height: 30px;
+    width:1200px; */
+    /* border: 1px solid black; */
+    overflow: auto;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1b1b1b;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+  }
+  
+  .footer-content {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: #111;
+  }
+  
+  .footer-content h3 {
+      margin-top: 50px;
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+    color: #fff;
+  }
+  
+  .footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+  }
+  
+  .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+  }
+  
+  .socials li {
+    margin: 0 10px;
+  }
+  
+  .socials a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+  }
+  
+  .socials a i {
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color 0.4s ease;
+  }
+  
+  .socials a:hover i {
+    color: aqua;
+  }
+  
+  .footer-bottom {
+    background: #000;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+  
+  .footer-bottom p {
+    float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+  }
+  
+  .footer-bottom p a {
+    color: #ccc;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .footer-bottom span {
+    text-transform: uppercase;
+  }
+  
+  .footer-menu {
+    float: right;
+  }
+  
+  .footer-menu ul {
+    display: flex;
+  }
+  
+  .footer-menu ul li {
+    padding-right: 10px;
+  
+    display: block;
+  }
+  
+  .footer-menu ul li a {
+    color: #cfd2d6;
+  
+    text-decoration: none;
+  }
+  
+  .footer-menu ul li a:hover {
+    color: #27bcda;
+  }
+  
+  @media (max-width: 500px) {
+    .footer-bottom p {
+      float: none;
+    }
+  
+    .footer-menu ul {
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }   
+
+
+
+    </style>
+  </head>
+  <body>
+    <section class="s1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#"> <img src="https://i.imgur.com/spijFb3.jpg" height="50px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link"  href="{% url 'about_us' %}">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'contact_us' %}">Contact Us <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+    </div>
+</section>
+      <h1>Contact Us!</h1>
+    <main>
+        <div class="header">
+            <div class="left-column">
+            <div class="div1">
+                <table cellspacing="10">
+                <tr>
+                    <td><i class="fa-solid fa-envelope"></i></td>
+                    <td>nirmauniversity@nirmauni.ac.in</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-location-dot"></i></td>
+                    <td>Nirma University, Ahmedabad</td>
+                </tr>
+                <br><br><br>
+                </table>
+                <br><br><br><br>
+                <div class="bg">
+                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div class="sec2map" style='overflow:hidden;height:750px;text-align: center;  justify-content: center;'><div id='gmap_canvas' style='height:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="http://freedirectorysubmissionsites.com/">free web directories</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(23.1290,72.5451),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(23.1290,72.5451)});infowindow = new google.maps.InfoWindow({content:'<strong>Our Location</strong><br>Nirma University<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="right-column">
+            <div class="formbold-main-wrapper">
+                <!-- Author: FormBold Team -->
+                <!-- Learn More: https://formbold.com -->
+                <div class="formbold-form-wrapper">
+                <form action="https://formbold.com/s/FORM_ID" method="POST">
+                    <div class="formbold-mb-5">
+                    <label for="name" class="formbold-form-label"> Full Name </label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Full Name"
+                        class="formbold-form-input"
+                    />
+                    </div>
+            
+                    <div class="formbold-mb-5">
+                    <label for="email" class="formbold-form-label"> Email Address </label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        class="formbold-form-input"
+                    />
+                    </div>
+            
+                    <div class="formbold-mb-5">
+                    <label for="subject" class="formbold-form-label"> Subject </label>
+                    <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        placeholder="Enter your subject"
+                        class="formbold-form-input"
+                    />
+                    </div>
+            
+                    <div class="formbold-mb-5">
+                    <label for="message" class="formbold-form-label"> Message </label>
+                    <textarea
+                        rows="6"
+                        name="message"
+                        id="message"
+                        placeholder="Type your message"
+                        class="formbold-form-input"
+                    ></textarea>
+                    </div>
+            
+                    <div>
+                    <button class="formbold-btn">Submit</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            
+            <!-- <div class="div2">
+                <form action="#" method="post">
+        
+                <label for="name"></label>
+                <input placeholder="NAME" id="name" name="name" required >
+                <br><br>
+                <label for="email"></label>
+                <input placeholder="EMAIL" id="email" name="email" required>
+                <br><br>
+                <label for="message"></label>
+                <textarea placeholder="MESSAGE" name="message" rows="5" required></textarea>
+                <br><br>
+                <button>Submit</button>
+                </form>
+            </div> -->
+            </div>
+            <!-- <div class="footer">
+                <div class="footer-content">
+                    <h3>Footer Example</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae felis scelerisque, gravida sapien non, cursus augue. Aenean id pretium turpis. Suspendisse eros nunc, sollicitudin nec.</p>
+                    <ul class="socials">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom">
+                <p>Copyright &copy 2023 </p>
+                    <div class="footer-menu">
+                        <ul class="f-menu">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <h3>Rame Gujarat</h3>
+                <p>Rame Gujarat Sports Management System. Thank you for choosing us as your trusted partner in sports management.</p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+            <p>Copyright &copy 2023 </p>
+                <div class="footer-menu">
+                    <ul class="f-menu">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+  </body>
+</html>

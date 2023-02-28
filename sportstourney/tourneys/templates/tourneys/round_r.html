@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GRIDS?</title>
+	<style type="text/css">
+		body{
+/*		  display: flex;
+		  justify-content: center;
+		  align-items: center;*/
+		  margin: 0;
+		  /*height: 100vh;*/
+		}
+ 
+		.item{
+/*			margin-left: 10px;*/
+			background-color: #FFDFD3;
+			height: 150px;
+			border: 5px solid #957DAD;
+			border-radius: 20px;
+/*			grid-template-rows: 1fr;
+			grid-column: auto;
+  			grid-row: auto;*/
+			width: 200px;
+		}
+		.team-1{
+			padding: 10px;
+			  display: flex;
+  			  justify-content: space-between;
+  			  height: 10%;
+/*  			  background-color: yellow;*/
+		}
+		.team-2{
+			  padding: 10px;
+			  display: flex;
+  			  justify-content: space-between;
+		}
+		.header{
+		  background-color: #957DAD;
+		  grid-column-start: 1;
+		  grid-column-end: 20;
+		  grid-row-start: 1;
+		  grid-row-end: 2;
+		  height: 100px;
+		}
+		.footer{
+		  background-color: yellow;
+		  grid-column-start: 1;
+		  grid-column-end: 5;
+		  grid-row-start: 6;
+		  grid-row-end: 7;
+		  height: 100px;
+		}
+		.date{
+			text-align: center;
+		}
+
+
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="header"></div>
+	{% for a,b in name %}
+	<div class="item">
+	  <div class="team-1">
+	  	<p>
+	  		{{ a }}
+	  	</p>
+	  	<p>0</p>
+	  </div>
+	  <div class="team-2">
+	 	<p>
+			{{ b }}	 		
+	 	</p>
+	 	<p>0</p>
+	  </div>
+	  <div class="date">TBD</div>
+	</div>
+	{% endfor %}
+</div>
+</body>
+<script type="text/javascript">
+	const container = document.querySelector('.container');
+	container.style.backgroundColor = '#D291BC';
+	// container.style.height = '100vh';
+	// container.style.width = '100%';
+	container.style.display = 'grid';
+	container.style.gridTemplateColumns = 'repeat(${n},1fr)';
+	container.style.gridAutoFlow = 'column';
+	container.style.rowGap = '10px';
+	container.style.columnGap = '10px';
+	// console.log(${n});
+	// container.style.justifyContent = 'center';
+
+	const items = Array.from(container.children);
+	var c = {{ rounds|safe }};
+	console.log(c);
+	var num=0;
+	console.log(`${c[num]}` + '/' + `${c[num]+1}`);
+  for (let i = 1; i < items.length; i++) {
+  	const gridDistro = `${c[num]}` + '/' + `${c[num]+1}`;
+  	items[i].style.gridColumn=gridDistro;
+  	console.log(`${c[num] / c[num]+1}`);
+  	num+=1;
+  	if(num==c.length)break;
+    // switch (i) {
+    //   case 1:
+    //   case 2:
+    //     items[i].style.gridColumn = '`${c[0]}` / `${c[0]+1}`';
+    //     break;
+    //   case 3:
+    //   case 4:
+    //     items[i].style.gridColumn = '`${c[2]}` / `${c[2]+1}`';
+    //     break;
+    //   case 5:
+    //     items[i].style.gridColumn = '`${c[4]}` / `${c[4]+1}`';
+    //     break;
+    //   default:
+    //     break;
+    // }
+  }
+  console.log("BRUH");	
+</script>
+</html>

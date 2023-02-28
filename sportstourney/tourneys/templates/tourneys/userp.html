@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Profile Page</title>
+        <!-- <link rel="stylesheet" href="user-profile.css"> -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <style>
+.cover{
+    height: 490px;
+    background:url(https://images.pexels.com/photos/1616403/pexels-photo-1616403.jpeg) no-repeat left;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: auto;
+}
+
+#pfp{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#pfp i {
+    font-size: 26px;
+    color: #555;
+}
+
+#pfp p {
+    font-weight: 500;
+}
+
+#pfp .card {
+    margin:50px;
+    border-radius: 0;
+    background: #e1c7e0 ;
+    box-shadow: 5px 5px 15px #262425;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+}
+
+#pfp .card:hover {
+    background: #4a2456 ;
+    color: #dfdfdf;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #2f2d2d;
+}
+
+#pfp .card:hover h3,
+#pfp .card:hover i {
+    color: #e9e9e9;
+}
+
+/* image{
+    height:380;
+} */
+.search1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* padding-right: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dfdfdf;
+    text-align: center;
+}
+.description{
+    padding:10px;
+}
+.thead{
+    font-size:38px;
+    font-family: 'Source Serif Pro', serif;
+	padding-top:30px;
+    padding-bottom: 10px;
+    background: #dfdfdf;
+    justify-content: center;
+    text-align: center;
+}
+.tdisp{
+    background: #dfdfdf;
+}
+#trmt{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-right: 450px;
+}
+#trmt i {
+    font-size: 26px;
+    color: #555;
+}
+
+#trmt .card {
+    margin:40px;
+    border-radius: 0;
+    background: #f8f8f8 ;
+    box-shadow: 5px 5px 15px #262425;
+    padding-bottom: 10px;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    width:600px;
+}
+
+#trmt .card:hover {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #ded3d3;
+}
+.des h6{
+    padding-top: 30px;
+    font-size: 20px;
+}
+.des p{
+    color:#2f2d2d;
+}
+
+.separator--line {
+  border-bottom: 5px solid #000000;
+  margin-left: 28%;
+  width: 40px;
+  animation: separator-width 1s ease-out forwards;
+}
+@keyframes separator-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 43%;
+  }
+}
+        </style>
+
+    </head>
+
+    <body>
+        {% include 'tourneys/nab_bar.html' %}        
+
+        <div class="cover">
+            <section id="pfp">
+                <div class="col-lg-3 col-md-6 pt-1">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img class="img-fouild rounded w-75 mb-3"
+                                src="https://i.pinimg.com/736x/6e/f4/ca/6ef4caa2da03b1fb9e4a00563c76ef5a.jpg">
+                            <h3>{{name}}</h3>
+                            <div class="description">
+                                <!-- <h5>32</h5>
+                                <p>Tournaments</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="search1">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {% if request.user in ug %}
+                    <a href="{% url 'tourcreate' %}">
+                        <button style="float:right ;margin-right:20px ;" class="btn btn-dark my-2 my-sm-0">Create Tournament</button>
+                    </a>
+                    {% endif %}
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </nav>
+        </div>
+        <div class="tournament">
+            <div class="thead">
+                <text>Tournaments</text>
+                <hr class="separator" /> <!-- just a spacer by default -->
+                <hr class="separator separator--line" />
+            </div>
+            <div class="tdisp">
+                {% if count == 0 %}
+                No Tournament
+                {% else %}
+                {% for i in te %}
+                <section id="trmt">
+                    <div class="col-lg-3 col-md-6 pt-1">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3>{{i.tourney_nam}}</h3>
+                                <div class="des">
+                                    <h6>{{i.tourney_org}}</h6>
+                                    <p>Tournament Organizer</p>
+                                    <h6>{{i.date_created}}</h6>
+                                    <p>Tournment Start Date</p>
+                                    <h6>{{i.date_ended}}</h6>
+                                    <p style="padding-bottom:30px;">Tournment End Date</p>
+                                    <a href="{% url 'fullEvent' i.tourney_id %}" class="btn btn-dark my-2 my-sm-0">Go to Events</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- <div>
+                    <div class="card text-center">
+                        <div class="cardheader">
+                            {{i.tourney_nam}}
+                        </div>
+                        <div class="cardbody">
+                            <p>Tournament Organizer: - {{i.tourney_org}}</p>
+                            <p>Tournment Start Date- {{i.date_created}}</p>
+                            <p>Tournment End Date- {{i.date_ended}}</p>
+                            <a href="{% url 'fullEvent' i.tourney_id %}" class="btn btn-dark my-2 my-sm-0">Go to Events</a>
+                        </div>
+                    </div>
+                </div> -->
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </html>
+
+
+    </body>
+
+</html>

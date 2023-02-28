@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <title>Tournament Page</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <link rel="stylesheet" href="t.css"> -->
+  <style>
+    .row{
+      display: grid;
+      gap: var(--size-2);
+      grid-auto-flow: column;
+      grid-auto-columns: 26%;
+
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+    }
+  </style>
+</head>
+
+<body class="p-3 m-0 border-0 bd-example">
+
+  <!-- <div class="h2 text-center bg-info">Three DIVS next to each other</div> -->
+<h1>Tournaments</h1>
+<br>
+  {% if request.user in ug %}
+  <a href="{% url 'tourcreate' %}"><button style="float: right;" type="button" class="btn btn-primary">Create Tournament</button></a>
+  {% endif %}
+  <br>
+  {% if len == 0 %}
+   No Tournaments
+  {% else %}
+  <div class="row">
+      {% for i in full %}
+      <div class="col-3 bg-white">
+        <div class="card" style="width: 18rem; user-select: auto;">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img"
+            aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"
+            style="user-select: auto;">
+            <title style="user-select: auto;">Placeholder</title>
+            <rect width="100%" height="100%" fill="#868e96" style="user-select: auto;"></rect><text x="50%" y="50%"
+              fill="#dee2e6" dy=".3em" style="user-select: auto;"><a href="{% url 'fullEvent' i.tourney_id %}">See All Events</a></text>
+          </svg>
+        
+          <div class="card-body" style="user-select: auto;">
+            <h5 class="card-title" style="user-select: auto;">{{i.tourney_nam}}</h5>
+            <!-- <p class="card-text" style="user-select: auto;">Some quick example text to build on the card title and make up the
+              bulk of the card's content.</p> -->
+            <p class="card-text" style="user-select: auto;">Organizer name : {{i.tourney_org}}</p>
+            <p class="card-text" style="user-select: auto;">Tournament start date : {{i.date_created}}</p>
+            <p class="card-text" style="user-select: auto;">Tournament end date : {{i.date_ended}}</p>
+            <!-- <a href="#" class="btn btn-primary" style="user-select: auto;">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+    </div>
+
+  </div>
+</body>
+
+</html>

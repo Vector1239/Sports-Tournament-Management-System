@@ -1,0 +1,37 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # path('', views.landing),
+    # path('account/', views.account,name="account"),
+    # path('ulogin/', views.ulogin,name="ulogin"),
+    # path("logout/",views.logoutUser,name="logout"),
+    # path('Tourney/', views.Tourney,name="Tourney"),
+    # path('createT/', views.createT,name="createT"),
+    # path('eventS/<int:pk_t>/', views.eventS,name="eventS"),     
+    # path('brackets/<int:pk_e>/',views.brackets,name="brackets"),
+    # path('',views.noT,name="test"),
+    #================================================================
+    path('', views.landing,name="lan"),
+    path('account/', views.account,name="account"),
+    # path('ulogin/', views.ulogin,name="ulogin"),
+    # path('uregister/', views.uregister,name="uregister"),
+    path('login_register/<int:pk_e>/', views.login_register,name="login_register"),
+    path('about_us/', views.about_us,name="about_us"),
+    path('contact_us/', views.contact_us,name="contact_us"),
+    path('userP/', views.userP,name="userP"),
+    path('tourcreate/', views.tourcreate,name="tourcreate"),
+    path("logout/",views.logoutUser,name="logout"),
+    path('Tourney/', views.Tourney,name="Tourney"),
+    path('AllTourney/', views.AllTourney,name="AllTourney"),
+    path('fullEvent/<int:pk_t>/', views.fullEvent,name="fullEvent"),
+    path('evecreate/<int:pk_t>/', views.evecreate,name="evecreate"),
+    path('indeve/<int:pk_e>/', views.indeve,name="indeve"),         
+    path('createT/', views.createT,name="createT"),
+    path('eventS/<int:pk_t>/', views.eventS,name="eventS"),     
+    path('brackets/<int:pk_e>/',views.brackets,name="brackets"),
+    path("editTeam/<int:pk_e>/",views.editTeam,name="editTeam"),
+    path("math/<int:pk_e>/",views.math,name="math"),
+    path("regr/<int:pk_e>/",views.regr,name="regr"),
+    path("test/",views.noT,name="test"),
+]

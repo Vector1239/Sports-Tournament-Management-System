@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Event Creation</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="{% static '/css/button.css' %}">
+
+	</head>
+		<body>
+			<!-- {% include 'tourneys/nab_bar.html' %} -->
+			<div class="form">
+				<h1>Login/Register</h1>
+				<a href="{% url 'login_register' 0 %}"><button name="sub">Login</button></a>
+				<a href="{% url 'login_register' 0 %}"><button style="float:right;">Register</button></a>
+			</div>
+		</body>
+
+</html>
+
+

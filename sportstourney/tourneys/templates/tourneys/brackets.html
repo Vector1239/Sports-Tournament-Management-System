@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/brack.css' %}">
+    <style></style>
+  </head>
+  <body>
+  <!-- Back -->
+    <div class="row">
+	 {% for i in n %} 
+		{% if i == 0 %}
+		 <div class="table1">
+        <table> 
+			{% for i in real %}
+			<tr>
+            <td> 
+				{%if i == '?' %}
+				 <div class="unit">
+                <div class="rect1">&nbsp</div>
+                <div class="sqr1">&nbsp</div>
+              </div>
+			   {% else %}
+			    <div class="unit">
+                <div class="rect">{{i}}</div>
+                <div class="sqr">5</div>
+              </div>
+            </td> 
+			{% endif %} 
+			{% endfor %}
+          </tr>
+        </table>
+      </div> {% endif %} 
+	  {% if i == 1 %}
+	   <div class="table1">
+        <table> 
+			{% for i in bye %}
+			 <tr>
+            <td> {%if i == '?' %} <div class="unit">
+                <div class="rect1">&nbsp</div>
+                <div class="sqr1">&nbsp</div>
+              </div> 
+              {% elif i == 'E' %}
+                <div class="unit">
+                <div class="rect">&nbsp</div>
+                <div class="sqr">&nbsp</div>
+              </div>
+              {% else %} 
+              <div class="unit">
+                <div class="rect">{{i}}</div>
+                <div class="sqr">5</div>
+              </div>
+            </td> {% endif %} {% endfor %}
+          </tr>
+        </table>
+      </div> {% endif %} 
+	  {% endfor %}
+      <!-- for tables --> 
+	  {% for i in t2 %} <div class="table1">
+        <table>
+          <td> {% with ''|center:i as range %} {% for _ in range %} <tr> {%if i.tem_name == 'Team 0' %} <div class="unit">
+                <div class="rect1">&nbsp</div>
+                <div class="sqr1">&nbsp</div>
+              </div> {% else %} <div class="unit">
+                <div class="rect">{{i.tem_name}}</div>
+                <div class="sqr">5</div>
+              </div> {% endif %} </tr> {% endfor %} {% endwith %} </td>
+        </table>
+      </div> {% endfor %}
+  </body>
+
+</html>

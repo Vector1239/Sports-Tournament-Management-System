@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+	<style type="text/css">
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+ grid-auto-flow: column;
+  grid-gap: 10px;
+}
+
+.item1 {
+  background-color: yellow;
+}
+</style>
+<body>
+<div class="container">
+  <div class="item1">Item 1</div>
+  <div class="item1">Item 2</div>
+  <div class="item1">Item 3</div>
+  <div class="item1">Item 4</div>
+  <div class="item1">Item 5</div>
+  <div class="item1">Item 6</div>
+  <div class="item1">Item 7</div>
+  <div class="item1">Item 8</div>
+  <div class="item1">Item 9</div>
+  <div class="item1">Item 10</div>
+  <div class="item1">Item 11</div>
+  <div class="item1">Item 12</div>
+  <div class="item1">Item 13</div>
+  <div class="item1">Item 14</div>
+  <div class="item1">Item 15</div>
+  <div class="item1">Item 16</div>
+</div>
+</body>
+<script type="text/javascript">
+		const container = document.querySelector('.container');
+	const items = Array.from(container.children);
+	let currentRow = 1;
+let currentColumn = 1;
+for (let i = 0; i < items.length; i++) {
+  items[i].style.gridColumnStart = currentColumn;
+  if (i < 3) {
+    items[i].style.gridRowStart = currentRow;
+    items[i].style.gridRowEnd = currentRow + 1;
+    currentRow++;
+  } else if (i >= 3 && i < 7) {
+    items[i].style.gridRowStart = currentRow;
+    items[i].style.gridRowEnd = currentRow + 1;
+    if (currentRow == 4) {
+      currentRow = 1;
+      currentColumn = 2;
+    } else {
+      currentRow++;
+    }
+  } else if (i >= 7 && i < 9) {
+    items[i].style.gridRowStart = currentRow;
+    items[i].style.gridRowEnd = currentRow + 1;
+    currentRow++;
+    if (currentRow == 3) {
+      currentRow = 1;
+      currentColumn = 3;
+    }
+  } else {
+    items[i].style.gridRowStart = 1;
+    items[i].style.gridRowEnd = 2;
+    currentColumn = 4;
+  }
+}
+</script>
+</html>
